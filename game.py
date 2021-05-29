@@ -5,6 +5,14 @@ from sys import exit
 from random import randint
 
 pygame.init()
+
+musica_de_fundo = pygame.mixer.music.load("sound.mp3")
+pygame.mixer.music.set_volume(0.2)
+
+coin = pygame.mixer.Sound("coin.wav")
+coin.set_volume(0.5)
+
+pygame.mixer.music.play(-1)
 relogio = pygame.time.Clock()
 
 largura = 640
@@ -69,5 +77,7 @@ while True:
         xM = randint(10, 630)
         yM = randint(10, 470)
         postos+=1
+        coin.play()
+        
         
     pygame.display.update()
